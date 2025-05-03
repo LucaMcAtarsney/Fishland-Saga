@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyubih36hter7"]
+
+[ext_resource type="Script" uid="uid://cw03bv32c8kjh" path="res://scripts/fishing.gd" id="1_mlppi"]
+
+[node name="fishingHandler" type="Node2D"]
+script = ExtResource("1_mlppi")
+
+[node name="fishTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="catchTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="fishTimer" to="." method="_on_fish_timer_timeout"]
+[connection signal="timeout" from="catchTimer" to="." method="_on_catch_timer_timeout"]
